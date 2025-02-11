@@ -20,7 +20,7 @@ const CreatePost = () => {
         setIsPosting(true);
         try {
             const result = await createPost(content, imageUrl);
-            if(result.success) {
+            if(result?.success) {
                 //reset the form
                 setContent("");
                 setImageUrl("");
@@ -46,7 +46,7 @@ const CreatePost = () => {
                             className="min-h-[100px] resize-none border-none focus-visible:ring-0 p-0 text-base" />
                     </div>
                 </div>
-                {/* Image Uplaod */}
+                {/* Image Upload */}
                 <div className="flex items-center justify-between border-t pt-4">
                     <div className="flex space-x-2">
                         <Button type="button" variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" disabled={isPosting} onClick={() => setShowImageUpload(!showImageUpload)}>
